@@ -1,0 +1,14 @@
+-- ロール作成
+CREATE ROLE app WITH LOGIN PASSWORD 'secretapp';
+CREATE ROLE cs WITH LOGIN PASSWORD 'secretcs';
+
+-- データベース作成
+CREATE DATABASE cs;
+CREATE DATABASE app;
+
+-- 権限付与
+\c cs
+GRANT ALL PRIVILEGES ON SCHEMA public TO cs;
+
+\c app
+GRANT ALL PRIVILEGES ON SCHEMA public TO app;

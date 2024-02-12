@@ -1,0 +1,10 @@
+version: '3'
+services:
+  postgres:
+    image: try-postgres_fdw
+    platform: linux/amd64
+    container_name: fdw
+    ports:
+      - 5432:5432
+    volumes:
+      - ./volumes/postgres:/var/lib/postgresql/data
